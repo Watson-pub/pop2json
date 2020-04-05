@@ -9,7 +9,7 @@ import matplotlib.image as mpimg
 # TODO: Change it to your tesseract exe path.
 TESSETRACT_PATH = r"D:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
 # TODO: Change it to your tesseract exe path.
-IMAGES_PATH = [r"D:\Projects\PyCharmProjects\watsonTraining\images_google\popups\warning-you-have-excessive-popups.png"]
+IMAGES_PATH = [r"C:\Users\yuval\.PyCharmCE2018.2\config\scratches\ROI_0.png"]
 
 pytesseract.pytesseract.tesseract_cmd = TESSETRACT_PATH
 
@@ -23,6 +23,8 @@ def main():
         gray = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
         # write the grayscale image to disk as a temporary file so we can
         # apply OCR to it
+        imgplot = plt.imshow(gray)
+        plt.show()
         filename = "{}.png".format(os.getpid())
         cv2.imwrite(filename, gray)
 
